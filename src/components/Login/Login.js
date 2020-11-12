@@ -8,13 +8,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [verifyCode, setVerifyCode] = useState('')
   const [code, setCode] = useState('');
+  const [nome, setNome] = useState('');
 
   const sendEmail = async (cod) => {
-    let user = await checkEmail(email)
+    let user = await checkEmail(email);
     if (user == undefined) return alert("Email invalido");
     return await Axios.post(API_URL + '/sendMail', { email: email, code: cod }).then(() => {
       alert("Foi enviado um código de verificação para seu e-mail");
-      console.log(cod)
+      setNome(user.nome);
       setCode(cod);
       return true;
     }).catch(err => {
@@ -44,7 +45,7 @@ const Login = () => {
 
     if (code) {
       if (code === verifyCode) {
-        sessionStorage.setItem('logedInWith', email);
+        sessionStorage.setItem('logedInWith', nome);
         location.href = '/home';
       } else {
         return alert('Codigo errado');
