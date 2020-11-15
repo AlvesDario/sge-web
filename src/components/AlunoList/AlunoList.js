@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import './style.css'
 const App = props => {
   const [alunoList, setAlunoList] = useState([]);
 
@@ -12,9 +12,12 @@ const App = props => {
     })
   }, [props]);
 
-  return <div className="col">
+  return <div className="col container">
     <ul>
-      {alunoList.map(aluno => <li><a onClick={() => props.onSelect(aluno.email)} >{aluno.email}</a></li>)}
+      {alunoList.map(aluno => 
+      <div className={props.selected === aluno.email?'bg-gray':'bg-light-gray'} onClick={() => props.onSelect(aluno.email)}>
+        <a >{aluno.email}</a>
+      </div>)}
     </ul>
   </div>
 };

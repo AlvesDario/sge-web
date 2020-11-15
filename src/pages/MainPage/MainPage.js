@@ -8,7 +8,7 @@ const App = props => {
 
   return <>
   <div className='row'>
-    <AlunoList onSelect={e => setSelected(e)} />
+    <AlunoList onSelect={e => setSelected(e)} selected={selected}/>
     <FileList aluno={selected} />
   </div>
   </>

@@ -65,3 +65,19 @@
     font-size: 12px;
     color: #777;
   }
+
+  .bg-gray {
+      background-color: gray;
+  }
+
+  .file-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  .file-name:hover {
+      text-decoration: none;
+      color: black;
+  }

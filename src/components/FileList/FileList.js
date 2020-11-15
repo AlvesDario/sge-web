@@ -3,7 +3,8 @@ import { React, useEffect, useState } from "react";
 import FileForm from './FileForm'
 
 const App = props => {
-  const [fileList, setFileList] = useState([])
+  const [fileList, setFileList] = useState([]);
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
     if(!props.aluno) return;
@@ -12,10 +13,10 @@ const App = props => {
     })
   }, [props])
 
-  return <div className="col">
+  return <div className="col container">
     <h3>{props.aluno}</h3>
       {fileList.map((file, index) => <div key={index}>
-        <FileForm id={file._id} />
+        <FileForm id={file._id} selected={selected} onClick={(e) => setSelected(e)} />
       </div>)}
   </div>
 }

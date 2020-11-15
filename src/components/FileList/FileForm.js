@@ -24,11 +24,13 @@ const App = props => {
   // }, [fileData])
 
   return <div className=''>
-    <div className='row justify-content-between'>
-      <a className='' onClick={() => setShowForm(!showForm)}>
+    <div className={`row justify-content-between ${props.selected===fileData.document?'bg-gray':'bg-light-gray'}`}>
+      <a className='file-name' onClick={() => {setShowForm(!showForm); props.onClick(fileData.document)}}>
         {fileData.document}
       </a>
-      <button className=''>download icon</button>
+      <button className='btn btn-secundary' style={{ backgroundColor: 'white' }}>
+        <img width='20' src='https://image.flaticon.com/icons/png/512/0/532.png' />
+      </button>
     </div>
     {showForm && <div >
       <div className='form-group'>
@@ -50,7 +52,7 @@ const App = props => {
         <textarea id='inputNotes' value={notes} onChange={e => setNotes(e.target.value)} className='form-control' />
 
       </div>
-      <div className='form-group align-self-end'>
+      <div className='form-group row align-self-end'>
         <button className='btn btn-secundary' onClick={() => setShowForm(false)}>Cancelar</button>
         <button className='btn btn-lg btn-dark btn-primary font-weight-bold mb-2'>Confirmar</button>
       </div>
