@@ -1,8 +1,8 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const API_URL = 
-const DB_URL = 
+const API_URL = "https://sge-backend.herokuapp.com/";
+const DB_URL = "https://jsonbox.io/box_1297d688082dece8e90d/";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,14 +13,15 @@ const Login = () => {
   const sendEmail = async (cod) => {
     let user = await checkEmail(email);
     if (user == undefined) return alert("Email invalido");
-    return await Axios.post(API_URL + '/sendMail', { email: email, code: cod }).then(() => {
-      alert("Foi enviado um código de verificação para seu e-mail");
+    // return await Axios.post(API_URL + '/sendMail', { email: email, code: cod }).then(() => {
+    //   alert("Foi enviado um código de verificação para seu e-mail");
       setNome(user.nome);
       setCode(cod);
+      console.log(cod)
       return true;
-    }).catch(err => {
-      return false;
-    })
+    // }).catch(err => {
+    //   return false;
+    // })
   }
 
   const generateRandomKey = () => {
