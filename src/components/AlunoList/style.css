@@ -1,3 +1,15 @@
 .bg-light-gray {
     background-color: lightgray;
 }
+.list-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    background-color: #F6F6F6;
+    font-weight: bold;
+}
+.selected-list-item {
+    background-color: #c4c4c4;
+}

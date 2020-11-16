@@ -13,12 +13,14 @@ const App = props => {
   }, [props]);
 
   return <div className="col container">
-    <ul>
-      {alunoList.map(aluno => 
-      <div className={props.selected === aluno.email?'bg-gray':'bg-light-gray'} onClick={() => props.onSelect(aluno.email)}>
-        <a >{aluno.email}</a>
-      </div>)}
-    </ul>
+    <h3><b>Alunos</b></h3>
+    <div >
+      {alunoList.map((aluno, index) =>
+        <div key={index} className={props.selected === aluno.email ? 'list-item selected-list-item' : 'list-item'} onClick={() => props.onSelect(aluno.email)}>
+          <a >{aluno.email}</a>
+        </div>)}
+    </div>
+
   </div>
 };
 

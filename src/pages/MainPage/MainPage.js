@@ -7,7 +7,7 @@ const App = props => {
   const [selected, setSelected] = useState('')
 
   return <>
-  <div className='row'>
+  <div className='row container'>
     <AlunoList onSelect={e => setSelected(e)} selected={selected}/>
     <FileList aluno={selected} />
   </div>
