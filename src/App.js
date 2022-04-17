@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 
@@ -10,9 +10,18 @@ import MainPage from "./pages/MainPage";
 
 export default function App() {
   return (
-    <Switch>
-      <Route exact path='/' component={Login} />
-      <Route path='/home' component={MainPage} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Login />}>
+        <Route path="home" element={<MainPage />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
