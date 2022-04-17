@@ -11,17 +11,16 @@ import MainPage from "./pages/MainPage";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />}>
-        <Route path="home" element={<MainPage />} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
-      </Route>
+      <Route exact path="/" element={<Login />} />
+      <Route path="home" element={<MainPage />} />
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: "1rem" }}>
+            <p>There's nothing here!</p>
+          </main>
+        }
+      />
     </Routes>
   );
 }
