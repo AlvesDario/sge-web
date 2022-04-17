@@ -18,7 +18,7 @@ const App = () => {
                     src='https://logos-download.com/wp-content/uploads/2019/11/Fatec_Logo.png'
                     alt="Logo da Fatec"
                   />
-                  <h3 class="login-heading mb-4">Acesse: </h3>
+                  <h3 className="login-heading mb-4">Acesse: </h3>
                   <Login />
                 </div>
               </div>

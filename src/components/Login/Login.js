@@ -12,7 +12,7 @@ const Login = () => {
 
   const sendEmail = async (cod) => {
     let user = await checkEmail(email);
-    if (user == undefined) return alert("Email invalido");
+    if (user === undefined) return alert("Email invalido");
     // return await Axios.post(API_URL + '/sendMail', { email: email, code: cod }).then(() => {
     //   alert("Foi enviado um código de verificação para seu e-mail");
       setNome(user.nome);
@@ -69,14 +69,14 @@ const Login = () => {
         <input
           type="email"
           id="inputEmail"
-          class="form-control"
+          className="form-control"
           placeholder="Endereço de email"
           value={email}
           onChange={e => { setEmail(e.target.value) }}
         />
 
         <label
-          for="inputEmail">
+          htmlFor="inputEmail">
           Email
         </label>
       </div>
@@ -92,7 +92,7 @@ const Login = () => {
         />
 
         <label
-          for="inputcodSeguranca">
+          htmlFor="inputcodSeguranca">
           Codigo de verificação
         </label>
       </div>

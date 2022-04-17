@@ -36,7 +36,7 @@ const App = props => {
     {showForm && <div style={{backgroundColor:"#F6F6F6", marginBottom:10}} className="container" >
       <div className='form-group'>
         <label
-          for="inputStatus">
+          htmlFor="inputStatus">
           Estado
         </label>
         <div className="form-group" style={{boxShadow:"2px 2px 6px 2px rgba(0,0,0,0.25)"}}>
@@ -48,7 +48,7 @@ const App = props => {
       </div>
       <div className='form-group' >
         <label
-          for="inputNotes">
+          htmlFor="inputNotes">
           Anotacoes
         </label>
         <textarea style={{boxShadow:"2px 2px 6px 2px rgba(0,0,0,0.25)"}} id='inputNotes' value={notes} onChange={e => setNotes(e.target.value)} className='form-control' />
